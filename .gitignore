@@ -1,0 +1,8 @@
+/node_modules/
+/yarn.lock
+/.idea/.gitignore
+/.idea/csv-plugin.xml
+/.idea/maintainable-test-fixtures.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
