@@ -1,16 +1,10 @@
 import { updateUser } from "./userService"
+import { createUser } from "../tests/helpers/createUser"
 
 describe('UserService - updateUser', () => {
     it('should update department', () => {
         // GIVEN
-        const user = {
-            id: 'e2f5a82a-3f2e-4b6d-b4d2-086afaa08f8a',
-            username: 'john',
-            email: 'john.doe@example.com',
-            country: 'France',
-            department: 'IT Services',
-            divisionName: 'IT',
-        }
+        const user = createUser()
         const updateData = {
             department: 'IT Support',
         }
