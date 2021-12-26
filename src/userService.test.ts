@@ -24,6 +24,25 @@ describe('UserService - updateUser', () => {
 
     it.todo('should not update on empty update');
 
-    it.todo('should update divisionName');
+    it('should update divisionName', () => {
+        // GIVEN
+        const user = createUser({
+            divisionName: "ICT",
+        })
+        const updateData = {
+            divisionName: 'IT',
+        }
+        // WHEN
+        const currentUser = updateUser(user, updateData)
 
+        // THEN
+        expect(currentUser).toStrictEqual({
+            id: 'e2f5a82a-3f2e-4b6d-b4d2-086afaa08f8a',
+            username: 'john',
+            email: 'john.doe@example.com',
+            country: 'France',
+            department: 'IT Services',
+            divisionName: 'IT',
+        })
+    });
 })
