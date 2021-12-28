@@ -12,13 +12,9 @@ describe('UserService - updateUser', () => {
         const currentUser = updateUser(user, updateData)
 
         // THEN
-        expect(currentUser).toStrictEqual({
-            id: 'e2f5a82a-3f2e-4b6d-b4d2-086afaa08f8a',
-            username: 'john',
-            email: 'john.doe@example.com',
-            country: 'France',
+        expect(currentUser).toMatchObject({
+            id: user.id,
             department: 'IT Support',
-            divisionName: 'IT',
         })
     })
 
@@ -36,12 +32,8 @@ describe('UserService - updateUser', () => {
         const currentUser = updateUser(user, updateData)
 
         // THEN
-        expect(currentUser).toStrictEqual({
-            id: 'e2f5a82a-3f2e-4b6d-b4d2-086afaa08f8a',
-            username: 'john',
-            email: 'john.doe@example.com',
-            country: 'France',
-            department: 'IT Services',
+        expect(currentUser).toMatchObject({
+            id: user.id,
             divisionName: 'IT',
         })
     });
