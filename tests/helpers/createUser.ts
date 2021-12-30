@@ -1,18 +1,12 @@
-import * as faker from "faker"
-import { User } from "../../src/userService"
+import { User, userSchema } from "../../src/userService"
+import { fake } from "yup-schema-faker"
 
-export const createUser = (data: Partial<User> = {}) : User => {
-    const fakeData: User = {
-        id: faker.datatype.uuid(),
-        username: faker.name.findName(),
-        email: faker.internet.email(),
-        country: faker.address.country(),
-        department: faker.company.companyName(),
-        divisionName: faker.name.jobArea(),
-    }
+export const createUser = (data: Partial<User> = {}): User => {
+    const fakeSchemaData = fake(userSchema.noUnknown()) as User;
+    console.log(fakeSchemaData);
 
     return {
-        ...fakeData,
+        ...fakeSchemaData,
         ...data,
     }
 };
