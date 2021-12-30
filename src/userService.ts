@@ -2,11 +2,11 @@ import { InferType, object, string } from "yup"
 
 export const userSchema = object({
     id: string().uuid(),
-    username: string().min(1).required(),
+    username: string().required(),
     email: string().email().required(),
-    country: string().min(1).required(),
-    department: string().min(1).required(),
-    divisionName: string().min(1).required(),
+    country: string().required(),
+    department: string().required(),
+    divisionName: string().required(),
     city: string().optional(),
 }).required();
 
